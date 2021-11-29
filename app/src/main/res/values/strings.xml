@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">s205414 lykkehjulet</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gæt">Gæt et ord</string>
+    <string name="velkommen">Velkommen til lykkehjulet</string>
+    <string name="startKnap">Start</string>
+    <string-array name="lande_array">
+        <item>Somalia</item>
+        <item>Kina</item>
+        <item>Danmark</item>
+        <item>Holland</item>
+        <item>Rusland</item>
+        <item>Sverige</item>
+        <item>Norge</item>
+    </string-array>
+</resources>
