@@ -29,6 +29,7 @@ class GameFragment : Fragment() {
     private var param2: String? = null
     private var hemmeligOrd = ""
     private var spillersGæt = ""
+
     // ord der bliver displayet i vistOrd
     private var dOrd = ""
     private val rigtigGæt = mutableListOf<String>()
@@ -63,9 +64,9 @@ class GameFragment : Fragment() {
             vistOrd.visibility = View.VISIBLE
             gætteOmråde.visibility = View.VISIBLE
 
-
             startSpil()
             vistOrd.text = dOrd
+            Toast.makeText(activity, hemmeligOrd, Toast.LENGTH_SHORT).show()
 
 
         }
@@ -79,14 +80,16 @@ class GameFragment : Fragment() {
         gætKnap.setOnClickListener {
             spillersGæt = gætteOmråde.text.toString().toLowerCase()
             gætteOmråde.text = null
-
-
-
+            tjekGæt()
+            vistOrd.text = dOrd
+            //displayBogstavet("")
             Toast.makeText(activity, "Du har trykket på gæt", Toast.LENGTH_SHORT).show()
+
         }
 
         return view
     }
+
 
     // Starter spillet..
     private fun startSpil() {
@@ -104,20 +107,60 @@ class GameFragment : Fragment() {
 
     private fun tjekGæt() {
         if (spillersGæt.length == 1) {
-            if (spillersGæt in hemmeligOrd.toLowerCase()) {
+            if (spillersGæt in hemmeligOrd.toLowerCase() && spillersGæt !in dOrd) {
 
-                hemmeligOrd.add(spillersGæt)
+                rigtigGæt.add(spillersGæt)
+                displayBogstavet()
 
 
-                Toast.makeText(activity, "Good guess!", Toast.LENGTH_SHORT).show()
-                checkWin()
+
+                Toast.makeText(activity, "God gættet", Toast.LENGTH_SHORT).show()
+                //checkWin()
                 return
+                Toast.makeText(activity, "Du har tastet mere end et bogstav", Toast.LENGTH_SHORT).show()
             }
+        }
 
+    }
 
+    private fun displayBogstavet() {
+        val indexAfBogstav = hemmeligOrd.indexesOf(spillersGæt,true)
+
+        if(indexAfBogstav.size ==1){
+            dOrd = dOrd.replaceRange(indexAfBogstav[0], indexAfBogstav[0] +1, spillersGæt)
+
+        } else if (indexAfBogstav.size == 2){
+            dOrd = dOrd.replaceRange(indexAfBogstav[0], indexAfBogstav[0] +1, spillersGæt)
+            dOrd = dOrd.replaceRange(indexAfBogstav[1], indexAfBogstav[1] +1, spillersGæt)
         }
 
 
+        println(dOrd)
+        /*
+        while (indexAfBogstav>=0){
+            dOrd = indexAfBogstav
+        }
+            hemmeligOrd[indexAfBogstav] = spillersGæt.toCharArray(indexAfBogstav)
+        }
+
+         */
+        /*if (hemmeligOrd.contains(spillersGæt.toLowerCase())) {
+           dOrd = ind
+        } else {
+
+        }
+      return
+    }*/
     }
+
+    //
+
+    fun ignoreCaseOpt(ignoreCase: Boolean) =
+        if (ignoreCase) setOf(RegexOption.IGNORE_CASE) else emptySet()
+
+    fun String?.indexesOf(pat: String, ignoreCase: Boolean = true): List<Int> =
+        pat.toRegex(ignoreCaseOpt(ignoreCase)).findAll(this?: "").map { it.range.first }.toList()
+}
+
 
 
