@@ -99,7 +99,11 @@ class GameFragment : Fragment() {
             Toast.makeText(activity, "DU HAR TRYKKET DREJ!!!!", Toast.LENGTH_SHORT).show()
             spinHjul()
             liv.setText(livTilbage.toString())
-
+            point.setText(spillerPoint.toString())
+            if (spiltabt) {
+                Navigation.findNavController(view)
+                    .navigate(R.id.action_gameFragment_to_loseFragment)
+            }
 
         }
         gætKnap.setOnClickListener {
@@ -110,7 +114,7 @@ class GameFragment : Fragment() {
             spillersGæt = gætteOmråde.text.toString().toLowerCase()
             gætteOmråde.text = null
             tjekGæt()
-            spinHjul()
+            tjekTabtSpil()
             liv.setText(livTilbage.toString())
             point.setText(spillerPoint.toString())
             vistOrd.text = dOrd
@@ -156,13 +160,15 @@ class GameFragment : Fragment() {
                 displayBogstavet()
 
                 spillerPoint += pointGivet
+                pointGivet = 0
                 Toast.makeText(activity, "God gættet", Toast.LENGTH_SHORT).show()
                 tjekVinder()
-                //tjekTabtSpil()
+
 
                 return
 
             } else {
+                pointGivet = 0
                 livTilbage-=1
             }
         }
@@ -200,47 +206,49 @@ class GameFragment : Fragment() {
         if (tilfældigtFelt.equals("Du har får 100 point hvis du gætter rigtigt")) {
             pointGivet = 100
             //point.setText(pointGemt.toString())
-            println(pointGemt)
 
 
         }
         if (tilfældigtFelt.equals(("Du har får 200 point hvis du gætter rigtigt"))) {
             pointGivet = 200
             //point.setText(pointGemt.toString())
-            println(pointGemt)
 
 
         }
         if (tilfældigtFelt.equals(("Du har får 1000 point hvis du gætter rigtigt"))) {
             pointGivet = 1000
-
-            println(pointGemt)
-
-
         }
         if (tilfældigtFelt.equals(("Du har får 2000 point hvis du gætter rigtigt"))) {
             pointGivet = 2000
-            println(pointGemt)
-
-
         }
         if (tilfældigtFelt.equals(("Du har fået et ekstra liv"))){
             livTilbage +=1
 
         }
 
-        if (tilfældigtFelt.equals(("Du har mistet et liv "))){
-            livTilbage -=1
+        if (tilfældigtFelt.equals(("Du har mistet et liv"))){
+            livTilbage -= 1
+            println(livTilbage)
+
 
         }
 
-        if (tilfældigtFelt.equals(("Du er gået bankerot "))){
+        if (tilfældigtFelt.equals(("Du er gået bankerot"))){
+            spillerPoint = 0
 
         }
 
 
         // gør brug af .setText(point.toString())
     }
+    fun tjekTabtSpil(){
+            if(livTilbage == 0){
+                spiltabt = true
+
+            }
+        }
+
+
 
 
     // fra internettet https://stackoverflow.com/questions/62189457/get-indexes-of-substrings-contained-in-a-string-in-kotlin-way?fbclid=IwAR0ADek0xyM8CCIagLT1C_7VdZuNZQp6utCf4FI1D_wg1yFjPPW0Bpbarzo
@@ -253,20 +261,9 @@ class GameFragment : Fragment() {
 
 
 }
-   /* fun tjekTabtSpil(){
-        if (spillersGæt !in hemmeligOrd){
-            livTilbage--
-            if(livTilbage <= 0){
-                spiltabt = true
 
-            }
-        }
-        if (pointGemt <= 0){
-            Toast.makeText(activity, "DU ER gået bankerot", Toast.LENGTH_SHORT).show()
-            spiltabt = true
 
-        }
-    }*/
+
 
 
 
