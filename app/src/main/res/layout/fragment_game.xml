@@ -4,32 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="#04053E"
     tools:context=".GameFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_width="182dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="164dp"
+        android:backgroundTint="#086570"
         android:text="Drej hjulet"
+        android:textSize="30dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gætKnap" />
+        app:layout_constraintTop_toTopOf="@+id/Velkommen" />
 
     <TextView
         android:id="@+id/visOrd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:letterSpacing="0.2"
-        android:textSize="20sp"
+        android:layout_marginTop="84dp"
+        android:letterSpacing="0.3"
+        android:textColor="@color/white"
+        android:textSize="35dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="_____" />
@@ -38,36 +42,41 @@
         android:id="@+id/gætteOmråde"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:hint="@string/gæt"
-        android:textSize="15dp"
-        tools:text="Indtast et bogstav"
+        android:layout_marginTop="144dp"
+        android:backgroundTint="#FF1744"
+        android:hint="Indtast et bogstav her"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="25dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/visOrd"
-         />
+        app:layout_constraintTop_toBottomOf="@+id/visOrd" />
 
     <Button
         android:id="@+id/gætKnap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Guess"
+        android:layout_width="150dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#086570"
+        android:text="Gæt"
+        android:textSize="30dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gætteOmråde" />
 
     <TextView
         android:id="@+id/Velkommen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="337dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="132dp"
         android:text="@string/velkommen"
-        android:textSize="24sp"
-        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,79 +84,97 @@
 
     <Button
         android:id="@+id/startSpil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="177dp"
+        android:layout_height="120dp"
+        android:backgroundTint="#086570"
         android:text="@string/startKnap"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517" />
 
     <TextView
         android:id="@+id/liv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
         android:text="0"
-        android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/billedetAfliv"
+        app:layout_constraintTop_toBottomOf="@+id/point" />
 
     <TextView
         android:id="@+id/point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="19dp"
         android:text="0"
-        android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/liv"
-        app:layout_constraintStart_toEndOf="@+id/liv"
-        app:layout_constraintTop_toTopOf="@+id/liv" />
+        app:layout_constraintBottom_toTopOf="@+id/liv"
+        app:layout_constraintStart_toEndOf="@+id/billedetAfPoint"
+        app:layout_constraintTop_toTopOf="@+id/billedetAfPoint" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/billedetAfPoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:src="@android:drawable/star_big_on"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/spilleRegler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="691dp"
-        android:src="@android:drawable/ic_menu_help"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/point"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/displayAfhjul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_width="263dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="40dp"
         android:text="Tryk på drej hjul"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/visOrd" />
+
+    <ImageView
+        android:id="@+id/billedetAfliv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@android:drawable/ic_delete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/liv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/liv"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/kategori"
+        android:layout_width="189dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="28dp"
+        android:text="Kategori: Lande"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

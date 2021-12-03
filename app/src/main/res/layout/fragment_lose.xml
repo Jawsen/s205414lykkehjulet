@@ -5,6 +5,7 @@
     android:id="@+id/action_goToLose"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3139DA"
     tools:context=".LoseFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,11 +14,25 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="372dp"
-        android:text="YOU LOSE :("
-        android:textSize="24sp"
+        android:layout_marginTop="124dp"
+        android:text="DU TABTE :("
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/spil_IgenLose"
+        android:layout_width="187dp"
+        android:layout_height="87dp"
+        android:background="@color/purple_500"
+        android:backgroundTint="@color/purple_500"
+        android:text="Spil igen"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

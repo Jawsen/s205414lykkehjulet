@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,9 +35,18 @@ class WinFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_win, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_win, container, false)
+        val spilIgenKnapW= view.findViewById<Button>(R.id.spil_IgenWin)
+        // Inflate the layout for this fragment
+        spilIgenKnapW.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_gameFragment)
+        }
+        return view
     }
+
+
 
     companion object {
         /**

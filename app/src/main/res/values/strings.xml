@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">s205414 lykkehjulet</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="gæt">Gæt et ord</string>
+    <string name="gæt">Gæt et bogstav</string>
     <string name="velkommen">Velkommen til lykkehjulet</string>
     <string name="startKnap">Start</string>
     <string-array name="lande_array">
@@ -12,15 +12,20 @@
         <item>Rusland</item>
         <item>Sverige</item>
         <item>Norge</item>
+        <item>Tyskland</item>
+        <item>Finland</item>
+        <item>Uganda</item>
+        <item>Kenya</item>
+        <item>USA</item>
     </string-array>
 
     <string-array name="point">
-        <item>Du har får 100 point hvis du gætter rigtigt</item>
-        <item>Du har får 100 point hvis du gætter rigtigt</item>
-        <item>Du har får 100 point hvis du gætter rigtigt</item>
-        <item>Du har får 200 point hvis du gætter rigtigt</item>
-        <item>Du har får 1000 point hvis du gætter rigtigt</item>
-        <item>Du har får 2000 point hvis du gætter rigtigt</item>
+        <item>Du får 100 point hvis du gætter rigtigt</item>
+        <item>Du får 100 point hvis du gætter rigtigt</item>
+        <item>Du får 100 point hvis du gætter rigtigt</item>
+        <item>Du får 200 point hvis du gætter rigtigt</item>
+        <item>Du får 1000 point hvis du gætter rigtigt</item>
+        <item>Du får 2000 point hvis du gætter rigtigt</item>
         <item>Du er gået bankerot</item>
         <item>Du har fået et ekstra liv</item>
         <item> Du har mistet et liv</item>

@@ -4,15 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import java.lang.Math
-import java.lang.reflect.Constructor
-import kotlin.random.Random
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -68,6 +62,12 @@ class GameFragment : Fragment() {
         val liv = view.findViewById<TextView>(R.id.liv)
         val displayAfhjul = view.findViewById<TextView>(R.id.displayAfhjul)
         val point = view.findViewById<TextView>(R.id.point)
+        val billedetAfliv = view.findViewById<ImageView>(R.id.billedetAfliv)
+        val billedetAfpoint = view.findViewById<ImageView>(R.id.billedetAfPoint)
+        val katogeri = view.findViewById<TextView>(R.id.kategori)
+
+
+
 
 
         startKnap.setOnClickListener {
@@ -78,12 +78,16 @@ class GameFragment : Fragment() {
             velkommenText.visibility = View.INVISIBLE
             point.visibility = View.VISIBLE
             liv.visibility = View.VISIBLE
+            billedetAfliv.visibility = View.VISIBLE
+            billedetAfpoint.visibility = View.VISIBLE
+            katogeri.visibility = View.VISIBLE
+
 
 
             startSpil()
             liv.setText(livTilbage.toString())
             vistOrd.text = dOrd
-            Toast.makeText(activity, hemmeligOrd, Toast.LENGTH_SHORT).show()
+
 
 
         }
@@ -209,16 +213,16 @@ class GameFragment : Fragment() {
 
 
         }
-        if (tilfældigtFelt.equals(("Du har får 200 point hvis du gætter rigtigt"))) {
+        if (tilfældigtFelt.equals(("Du får 200 point hvis du gætter rigtigt"))) {
             pointGivet = 200
             //point.setText(pointGemt.toString())
 
 
         }
-        if (tilfældigtFelt.equals(("Du har får 1000 point hvis du gætter rigtigt"))) {
+        if (tilfældigtFelt.equals(("Du får 1000 point hvis du gætter rigtigt"))) {
             pointGivet = 1000
         }
-        if (tilfældigtFelt.equals(("Du har får 2000 point hvis du gætter rigtigt"))) {
+        if (tilfældigtFelt.equals(("Du får 2000 point hvis du gætter rigtigt"))) {
             pointGivet = 2000
         }
         if (tilfældigtFelt.equals(("Du har fået et ekstra liv"))){
